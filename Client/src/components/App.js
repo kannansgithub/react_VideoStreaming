@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { HashRouter, Route, Link } from "react-router-dom";
 
 export function FirstPage() {
   return (
@@ -20,12 +20,16 @@ export function SecondPage() {
   );
 }
 export default function App() {
+  /**
+   * ? Hash routing is showing # in URL
+   * ? Ex: http://localhost:3000/#/,http://localhost:3000/#/secondpage
+   */
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <Route path="/" exact component={FirstPage}></Route>
         <Route path="/secondpage" extract component={SecondPage}></Route>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
