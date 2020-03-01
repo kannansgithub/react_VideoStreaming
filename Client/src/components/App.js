@@ -1,5 +1,5 @@
 import React from "react";
-import { MemoryRouter, Route, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 export function FirstPage() {
   return (
@@ -21,15 +21,15 @@ export function SecondPage() {
 }
 export default function App() {
   /**
-   * ? Memory routing is showing URL without aditional data
-   * ? Ex: http://localhost:3000/,http://localhost:3000/
+   * ? Browser routing is showing without # in URL
+   * ? Ex: http://localhost:3000/,http://localhost:3000/secondpage
    */
   return (
-    <MemoryRouter>
+    <BrowserRouter>
       <div>
         <Route path="/" exact component={FirstPage}></Route>
         <Route path="/secondpage" extract component={SecondPage}></Route>
       </div>
-    </MemoryRouter>
+    </BrowserRouter>
   );
 }
