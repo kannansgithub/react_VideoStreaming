@@ -1,7 +1,31 @@
-import React, { Component } from "react";
+import React from "react";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
-export default class App extends Component {
-  render() {
-    return <div>App</div>;
-  }
+export function FirstPage() {
+  return (
+    <div>
+      <h1>Am First page</h1>
+      <br />
+      <Link to="/secondpage">Go to second page</Link>
+    </div>
+  );
+}
+export function SecondPage() {
+  return (
+    <div>
+      <h1>Am Second page</h1>
+      <br />
+      <Link to="/">Go to first page</Link>
+    </div>
+  );
+}
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div>
+        <Route path="/" exact component={FirstPage}></Route>
+        <Route path="/secondpage" extract component={SecondPage}></Route>
+      </div>
+    </BrowserRouter>
+  );
 }
