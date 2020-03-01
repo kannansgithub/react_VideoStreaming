@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, Route, Link } from "react-router-dom";
+import { MemoryRouter, Route, Link } from "react-router-dom";
 
 export function FirstPage() {
   return (
@@ -21,15 +21,15 @@ export function SecondPage() {
 }
 export default function App() {
   /**
-   * ? Hash routing is showing # in URL
-   * ? Ex: http://localhost:3000/#/,http://localhost:3000/#/secondpage
+   * ? Memory routing is showing URL without aditional data
+   * ? Ex: http://localhost:3000/,http://localhost:3000/
    */
   return (
-    <HashRouter>
+    <MemoryRouter>
       <div>
         <Route path="/" exact component={FirstPage}></Route>
         <Route path="/secondpage" extract component={SecondPage}></Route>
       </div>
-    </HashRouter>
+    </MemoryRouter>
   );
 }
