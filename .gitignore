@@ -1,1 +1,3 @@
 /Client/src/constants
+/Server/node_modules
+/rtmpServer/node_modules
